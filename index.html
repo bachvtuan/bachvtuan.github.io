@@ -5,8 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hello</title>
+    
+    <script>
+        var worker = new Worker("worker.sql.js");
+console.log('nice', new Date())
+
+
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', '/sql.db', true);
+xhr.responseType = 'arraybuffer';
+
+xhr.onload = e => {
+    
+   var uInt8Array = new Uint8Array(xhr.response);
+//   var db = new SQL.Database(uInt8Array);
+//   var contents = db.exec("SELECT * FROM employees");
+//   console.log('contents',contents)
+  
+  // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
+  worker.onmessage = function(event) {
+		var results = event.data.results;
+		console.log('results',results)
+        if (!results){
+            worker.postMessage({action:'exec', sql:"SELECT * FROM employees"});
+            worker.postMessage({action:'exec', sql:"SELECT * FROM employees LIMIT 3"});
+            worker.postMessage({action:'exec', sql:"SELECT * FROM employees LIMIT 10"});
+        }   else{
+            console.log('nice2', new Date())
+        }
+	}
+  try {
+			worker.postMessage({action:'open',buffer:xhr.response}, [xhr.response]);
+		}
+		catch(exception) {
+            console.log('exception',exception)
+			worker.postMessage({action:'open',buffer:uInt8Array});
+		}
+};
+xhr.send();
+    </script>
 </head>
 <body>
-    
+    This is in work
 </body>
 </html>
