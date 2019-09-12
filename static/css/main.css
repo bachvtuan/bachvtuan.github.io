@@ -1,10 +1,11 @@
 body {
   font-family: "Roboto Condensed", Arial, sans-serif;
-  background: url("/static/img/subtle_dots.png");
+  /* background: url("/static/img/subtle_dots.png"); */
+  background: #333333;
   line-height: 1.5em;
   font-weight: 300;
   font-size: 16px;
-  color: #666;
+  color: #f1f1f1;
 }
 hr {
   margin-top: 20px;
@@ -14,12 +15,12 @@ hr {
   border-bottom: 1px solid #fff;
 }
 span.time, span.categories {
-  color: #ADADAD;
+  color: #f1f1f1;
   margin-bottom: 5px;
   font-size: 11px;
 }
 h1, h2, h3 {
-  color: #696969;
+  color: #f1f1f1;
   font-weight: normal;
 }
 h1 {
@@ -31,7 +32,7 @@ h2, h3 {
 }
 a, a:link, a:active {
   text-decoration: none;
-  color: #3fa757;
+  color: #7fbd05;
 }
 a:hover {
   color: #B3B3B3;
@@ -40,7 +41,7 @@ a:hover {
 
 /* Layout */
 .main-layout {
-  background: #fff;
+  /* background: #fff; */
 }
 .sidebar-nav {
   margin: 0;
@@ -57,7 +58,7 @@ a:hover {
 
 /* Content */
 div.content pre {
-  background: #333333;
+  background: #222;
   padding: 10px;
   color: #FFF;
   overflow-x: auto;
@@ -66,7 +67,7 @@ div.content pre {
   border: none;
 }
 div.content .highlight {
-	background: #333333;
+	background: #222;
 }
 footer {
   border-top: 1px solid #F7F1F1;
@@ -89,12 +90,12 @@ div.col-sm-3 {
 }
 div.col-sm-3 strong {
   font-size: 16px;
-  color: #4A4A4A;
+  color: #eee;
   font-weight: normal;
 }
 div.col-sm-3 div.profile-about {
   margin-top: 10px;
-  color: #8C8C8C;
+  color: #eee;
 }
 
 /* Pagination */
@@ -133,10 +134,10 @@ div.col-sm-3 div.profile-about {
 }
 .social li a {
   font-size: 16px;
-  color: #969394;
+  color: #ddd;
 }
 .social li a:hover {
-  color: #6D6D6D;
+  color: #fff;
 }
 
 .share-page {
@@ -147,6 +148,14 @@ div.col-sm-3 div.profile-about {
 .post-content img,
 .content img {
   max-width: 100%
+}
+.pagination li a,.pagination li span{
+  background-color: #333 !important;
+  border: 1px solid #3c3c3c !important;
+  color:#f0b90b;
+}
+.pagination li a:hover,.pagination li span:hover{
+  background-color: #333 !important;
 }
 
 /* Responsive Conditional */
