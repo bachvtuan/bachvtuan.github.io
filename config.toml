@@ -1,0 +1,8 @@
+baseURL = 'http://localhost:8000'
+languageCode = 'en-us'
+title = 'My blog'
+theme = 'hugo-theme-learn'
+
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
