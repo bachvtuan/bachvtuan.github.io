@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:8000'
+baseURL = 'https://bachvtuan.github.io'
 languageCode = 'en-us'
 title = 'My blog'
 theme = 'hugo-theme-learn'
